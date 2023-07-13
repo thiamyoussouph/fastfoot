@@ -1,0 +1,18 @@
+#sideBar{
+  height: 100vh;
+  padding-top: 3rem;
+  background-color: #191F26;
+  color: #f5f5f5;
+}
+
+#mainView{
+  margin-top: 2.5rem;
+}
+
+
+
+
+#navBar{
+  background-color: #93C27E!important;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.25);
+}

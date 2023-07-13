@@ -1,0 +1,8 @@
+::ng-deep .pi-home {
+    font-size: 0.8rem;
+}
+
+::ng-deep .p-menuitem-text {
+    font-weight: 400;
+}
+
