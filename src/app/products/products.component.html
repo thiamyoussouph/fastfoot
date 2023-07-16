@@ -3,6 +3,36 @@
   <div class="card">
     <h3 class="card-header">products</h3>
     <div class="card-body">
+      <div class="card-body">
+        <input type="text" [ngModel]="keyword">
+        <button class="btn btn-outline-success" (click)="search()"><i class="bi bi-search"></i></button>
+      </div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">product id</th>
+      <th scope="col">product name</th>
+      <th scope="col">product price</th>
+      <th scope="col">product action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor=" let product of products | async">
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td >
+    <button (click)="handelcheck(product)" class="btn btn-outline-success">
+    <i [class]="product.checked?'bi bi-check':'bi bi-circle'" ></i>
+    </button>
+        <button (click)="deleteProduct(product)" class="btn btn-outline-danger">
+          <i class=" bi bi-trash"></i>
+        </button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
 
     </div>
   </div>

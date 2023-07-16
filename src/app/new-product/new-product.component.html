@@ -4,6 +4,28 @@
     <h3 class="card-header">new-product</h3>
     <div class="card-body">
 
+<div class="row">
+  <div class="col-md-6">
+    {{productform.value | json}}
+      <form  [formGroup]="productform" (ngSubmit)="saveproduct()">
+        <div class="form-group">
+          <label lass="form-label" for="name">name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" placeholder="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="price">price</label>
+          <input type="text" class="form-control" id="price" formControlName="price" placeholder="price">
+        </div>
+
+        <div class="form-group">
+          <label lass="form-label" for="price">checked</label>
+          <input type="checkbox" class="form-check-input" id="checked" formControlName="checked" placeholder="checked">
+        </div>
+          <button [disabled]="productform.invalid" class="btn btn-outline-success">Submit</button>
+      </form>
     </div>
   </div>
+    </div>
 </div>
+</div>
+

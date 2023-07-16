@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "youssouph thiam",
+      "price": "33",
+      "checked": true,
+      "id": 3
+    },
+    {
+      "name": "youssouph thiam",
+      "price": "33",
+      "checked": true,
+      "id": 4
+    },
+    {
+      "name": "kaba",
+      "price": "33",
+      "checked": false,
+      "id": 5
+    },
+    {
+      "name": "mamadi",
+      "price": "33",
+      "checked": false,
+      "id": 6
+    }
+  ]
+}
