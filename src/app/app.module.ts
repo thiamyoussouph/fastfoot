@@ -13,6 +13,27 @@ import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {DataViewModule} from "primeng/dataview";
+import {RatingModule} from "primeng/rating";
+import {TagModule} from "primeng/tag";
+import { DataViewLayoutOptions } from 'primeng/dataview';
+import {ToolbarModule} from "primeng/toolbar";
+import {ButtonModule} from "primeng/button";
+import {SplitButtonModule} from "primeng/splitbutton";
+import {TableModule} from "primeng/table";
+import {FileUploadModule} from "primeng/fileupload";
+import {ToastModule} from "primeng/toast";
+import { MessageModule } from 'primeng/message';
+import {ProductService} from "./services/product.service";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {PaginatorModule} from "primeng/paginator";
+import {RadioButtonModule} from "primeng/radiobutton";
+import {DialogModule} from "primeng/dialog";
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 @NgModule({
   declarations: [
@@ -31,9 +52,29 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BreadcrumbModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    DataViewModule,
+    RatingModule,
+    TagModule,
+    ToolbarModule,
+    ButtonModule,
+    SplitButtonModule,
+    TableModule,
+    FileUploadModule,
+    ToastModule,
+    MessageModule,
+    ConfirmDialogModule,
+    PaginatorModule,
+    RadioButtonModule,
+    DialogModule,
+    BrowserAnimationsModule
+
   ],
-  providers: [],
+  providers: [
+    ProductService,
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
