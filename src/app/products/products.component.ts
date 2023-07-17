@@ -38,7 +38,20 @@ export class ProductsComponent implements OnInit{
   ngOnInit(): void {
 
 
-    this.getProducts()
+    this.productService.getProducts()
+      .subscribe( {
+        next: data =>{this.products = data
+
+          this.statuses = [
+            { label: 'INSTOCK', value: 'instock' },
+            { label: 'LOWSTOCK', value: 'lowstock' },
+            { label: 'OUTOFSTOCK', value: 'outofstock' }
+          ];
+        },
+        error: error => {
+          console.log(error);
+        }
+      });
 
 
 
@@ -48,20 +61,7 @@ export class ProductsComponent implements OnInit{
 
     getProducts(){
 
-    this.productService.getProducts()
-      .subscribe( {
-  next: data =>{this.products = data
 
-    this.statuses = [
-      { label: 'INSTOCK', value: 'instock' },
-      { label: 'LOWSTOCK', value: 'lowstock' },
-      { label: 'OUTOFSTOCK', value: 'outofstock' }
-    ];
-  },
-error: error => {
-    console.log(error);
-  }
-});
 
   }
 
@@ -112,6 +112,16 @@ error: error => {
   }
 
   deleteSelectedProducts() {
+    this.confirmationService.confirm({
+      message: 'Are you sure you want to delete the selected products?',
+      header: 'Confirm',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.products = this.products.filter((val) => !this.selectedProducts?.includes(val));
+        this.selectedProducts = null;
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
+      }
+    });
 
   }
 
@@ -126,21 +136,40 @@ error: error => {
   }
 
   saveProduct() {
-    this.productService.saveProduct(this.product).subscribe({
-      next: savedProduct => {
-        this.productDialog = false;
-        this.submitted = true;
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000});
-        this.getProducts()
+   if(this.product.id){
+     this.productService.editProduct(this.product).subscribe({
+       next: updatedProduct => {
 
-      }
-    });
+         this.productDialog = false;
+         this.submitted = true;
+         this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
+       }
+     });
 
-    }
+    }else {
+      this.productService.saveProduct(this.product).subscribe({
+        next: newProduct => {
+          this.productDialog = false;
+          this.submitted = true;
+          this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000});
+        }
+      });
 
-
-
-  getSeverity(inventoryStatus: any) {
-    return undefined;
+   }
   }
+
+
+  getSeverity(Status:String) {
+    if(Status=='OUTOFSTOCK'){
+      return 'danger'
+    }
+      if(Status=='INSTOCK'){
+        return 'success'
+
+  }
+    if(Status=='LOWSTOCK'){
+      return 'warning'
+    }
+    return undefined
+}
 }

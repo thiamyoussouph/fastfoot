@@ -54,10 +54,10 @@
       "name": "Galaxy Earrings",
       "description": "Product Description",
       "image": "galaxy-earrings.jpg",
-      "price": 34,
+      "price": 30,
       "category": "Accessories",
       "quantity": 23,
-      "inventoryStatus": "INSTOCK",
+      "inventoryStatus": "instock",
       "rating": 5
     },
     {
@@ -67,9 +67,9 @@
       "description": "Product Description",
       "image": "game-controller.jpg",
       "price": 99,
-      "category": "Electronics",
+      "category": "Clothing",
       "quantity": 2,
-      "inventoryStatus": "LOWSTOCK",
+      "inventoryStatus": "instock",
       "rating": 4
     },
     {
@@ -93,6 +93,24 @@
       "category": "Accessories",
       "price": 55,
       "quantity": 5
+    },
+    {
+      "checked": false,
+      "id": "WWJ5Y6Q",
+      "inventoryStatus": "instock",
+      "name": "kaba",
+      "category": "Clothing",
+      "price": 55,
+      "quantity": 5
+    },
+    {
+      "checked": false,
+      "id": "1sCuuiA",
+      "inventoryStatus": "instock",
+      "name": "youssouph thiam",
+      "category": "Electronics",
+      "price": 22,
+      "quantity": 222
     }
   ]
 }

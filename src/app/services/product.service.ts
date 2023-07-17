@@ -29,4 +29,14 @@ export class ProductService {
 search(keyword:string):Observable<Array<Product>> {
   return this.http.get<Array<Product>>(`http://localhost:8089/products?name_like=${keyword}`)
 }
+
+  deleteSelectedProducts(selectedProducts: Product[]) {
+    return this.http.delete(`http://localhost:8089/products/deleteSelected${selectedProducts}`);
+
+
+  }
+  editProduct(product:Product):Observable<Product>{
+    return this.http.put<Product>(`http://localhost:8089/products/${product.id}`,
+      product)
+  }
 }
