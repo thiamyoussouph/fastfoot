@@ -83,34 +83,6 @@
       "quantity": 63,
       "inventoryStatus": "INSTOCK",
       "rating": 3
-    },
-    {
-      "checked": false,
-      "id": "aQT0nnB",
-      "inventoryStatus": "instock",
-      "name": "Gaming Set",
-      "description": "uuu",
-      "category": "Accessories",
-      "price": 55,
-      "quantity": 5
-    },
-    {
-      "checked": false,
-      "id": "WWJ5Y6Q",
-      "inventoryStatus": "instock",
-      "name": "kaba",
-      "category": "Clothing",
-      "price": 55,
-      "quantity": 5
-    },
-    {
-      "checked": false,
-      "id": "1sCuuiA",
-      "inventoryStatus": "instock",
-      "name": "youssouph thiam",
-      "category": "Electronics",
-      "price": 22,
-      "quantity": 222
     }
   ]
 }
