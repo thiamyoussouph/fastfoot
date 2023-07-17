@@ -126,8 +126,19 @@ error: error => {
   }
 
   saveProduct() {
+    this.productService.saveProduct(this.product).subscribe({
+      next: savedProduct => {
+        this.productDialog = false;
+        this.submitted = true;
+        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000});
+        this.getProducts()
 
-  }
+      }
+    });
+
+    }
+
+
 
   getSeverity(inventoryStatus: any) {
     return undefined;

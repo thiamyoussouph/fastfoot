@@ -85,16 +85,14 @@
       "rating": 3
     },
     {
-      "id": "1010",
-      "code": "plb34234v",
-      "name": "Gold Phone Case",
-      "description": "Product Description",
-      "image": "gold-phone-case.jpg",
-      "price": 24,
+      "checked": false,
+      "id": "aQT0nnB",
+      "inventoryStatus": "instock",
+      "name": "Gaming Set",
+      "description": "uuu",
       "category": "Accessories",
-      "quantity": 0,
-      "inventoryStatus": "OUTOFSTOCK",
-      "rating": 4
+      "price": 55,
+      "quantity": 5
     }
   ]
 }
